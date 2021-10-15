@@ -158,11 +158,9 @@ packages:
   cosmos_utils:
     dependency: "direct main"
     description:
-      path: "packages/cosmos_utils"
-      ref: main
-      resolved-ref: "5f4b35053f2c6775c5109d01e0ec6ff975286f32"
-      url: "https://github.com/tendermint/flutter.git"
-    source: git
+      path: "../cosmos_utils"
+      relative: true
+    source: path
     version: "0.0.1"
   crypto:
     dependency: transitive
@@ -184,7 +182,7 @@ packages:
       name: dartz
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.0-nullsafety.2"
+    version: "0.10.0"
   encrypt:
     dependency: "direct main"
     description:

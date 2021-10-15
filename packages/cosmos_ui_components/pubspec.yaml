@@ -12,10 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cosmos_utils:
-    git:
-      url: https://github.com/tendermint/flutter.git
-      path: packages/cosmos_utils
-      ref: main
+      path: ../cosmos_utils
 
 dev_dependencies:
   flutter_test:

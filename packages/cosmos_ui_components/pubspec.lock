@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.1"
+  bech32:
+    dependency: transitive
+    description:
+      name: bech32
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   bip39:
     dependency: transitive
     description:
@@ -60,11 +67,9 @@ packages:
   cosmos_utils:
     dependency: "direct main"
     description:
-      path: "packages/cosmos_utils"
-      ref: main
-      resolved-ref: "3653301536287b516e873a7d2fb23d2314fadf6f"
-      url: "https://github.com/tendermint/flutter.git"
-    source: git
+      path: "../cosmos_utils"
+      relative: true
+    source: path
     version: "0.0.1"
   crypto:
     dependency: transitive
@@ -79,7 +84,7 @@ packages:
       name: dartz
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.0-nullsafety.2"
+    version: "0.10.0"
   fake_async:
     dependency: transitive
     description:
