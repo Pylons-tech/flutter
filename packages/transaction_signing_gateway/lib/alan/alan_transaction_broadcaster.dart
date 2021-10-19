@@ -18,7 +18,7 @@ class AlanTransactionBroadcaster implements TransactionBroadcaster {
   Future<Either<TransactionBroadcastingFailure, TransactionHash>> broadcast({
     required SignedTransaction transaction,
     required PrivateWalletCredentials privateWalletCredentials,
-  }) async {
+    BroadcastMode broadcastMode = BroadcastMode.BROADCAST_MODE_SYNC,}) async {
     if (transaction is! SignedAlanTransaction) {
       return left(AlanTransactionBroadcastingFailure('passed transaction is not $SignedAlanTransaction'));
     }
@@ -27,7 +27,7 @@ class AlanTransactionBroadcaster implements TransactionBroadcaster {
     }
     final txSender = TxSender.fromNetworkInfo(_networkInfo);
     final response =
-        await txSender.broadcastTx(transaction.signedTransaction, mode: BroadcastMode.BROADCAST_MODE_BLOCK);
+        await txSender.broadcastTx(transaction.signedTransaction, mode: broadcastMode);
 
     if (response.hasTxhash()) {
       return right(TransactionHash(txHash: response.txhash));

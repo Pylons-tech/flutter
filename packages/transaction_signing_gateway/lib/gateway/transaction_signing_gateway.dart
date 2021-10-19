@@ -1,3 +1,4 @@
+import 'package:alan/alan.dart';
 import 'package:cosmos_utils/cosmos_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:transaction_signing_gateway/alan/alan_wallet_derivator.dart';
@@ -79,6 +80,7 @@ class TransactionSigningGateway {
   Future<Either<TransactionBroadcastingFailure, TransactionHash>> broadcastTransaction({
     required WalletLookupKey walletLookupKey,
     required SignedTransaction transaction,
+    BroadcastMode? broadcastMode = BroadcastMode.BROADCAST_MODE_SYNC
   }) async =>
       _infoStorage
           .getPrivateCredentials(walletLookupKey)
